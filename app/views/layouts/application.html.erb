@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hamilton</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div id="wrap">
+		<header><h1><%= link_to 'HAMMERCITY@NIGHT', listings_path%></h1></header>
+		<nav>
+			<%= link_to 'Music', genre_listing_path('music') %> |
+			<%= link_to 'Art', genre_listing_path('art') %>
+		</nav>
+		<%= yield %>
+	</div>
+</body>
+</html>

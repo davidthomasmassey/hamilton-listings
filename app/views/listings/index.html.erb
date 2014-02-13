@@ -1,0 +1,17 @@
+<h1>Upcoming Events</h1>
+
+<p><%= link_to 'New Listing', new_listing_path %></p>
+
+<% @listings.each do |listing| %>
+  <article class ="listing <%= class_name_for_listing(listing) %>">
+    <ul>
+    <li class="date"><%= listing.created_at.strftime(" %^b, %^a / %e") %></li>
+    <li class="name"><%= listing.title %></li>
+    <li class="location">@<%= listing.location %></li>
+    <li class="info"><%= listing.info %></li>
+    <!--<li><%= link_to 'Show', listing %></li>-->
+    <li><%= link_to 'Edit', edit_listing_path(listing) %></li>
+    <li><%= link_to 'Destroy', listing_path(listing), method: :delete, data: { confirm: 'Are you sure?' } %></li>           
+    </ul>
+  </article>
+<% end %>
